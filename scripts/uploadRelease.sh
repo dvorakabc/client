@@ -33,8 +33,8 @@ curl -s -H "Authorization: token $GITHUB_TOKEN" -X POST --data "$(generate_relea
 echo '{ 
   "stable": 
   {
-    "name": "'$VERSION'",
-    "url": "https://uploads.github.com/repos/$owner/$repo/releases/'"$3/NECRON-$3.jar"'"
+    "name": "'$3'",
+    "url": "https://uploads.github.com/repos/'$owner/$repo/releases/$3/NECRON-$3.jar"'"
   }
 }' > "latest.json"
 
