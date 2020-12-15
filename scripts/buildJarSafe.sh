@@ -26,8 +26,8 @@ rm -rf build/libs/ || {
 }
 
 export JAVA_HOME="$JDK_8_HOME"
-sudo archlinux-java set java-8-openjdk || exit $?
-chmod +x gradlew
+#sudo archlinux-java set java-8-openjdk || exit $?
+#chmod +x gradlew
 ./gradlew --no-daemon build &>/dev/null || {
   echo "[buildJarSafe] Gradle build failed, exiting." >&2
   exit 1
@@ -43,7 +43,7 @@ mv "$__named" "$__bad_named" # rename it to include release
 
 # Build release jar with the name without -release
 export JAVA_HOME="$JDK_11_HOME"
-sudo archlinux-java set java-11-openjdk || exit $?
+#sudo archlinux-java set java-11-openjdk || exit $?
 java -jar "$__d/jar-shrink/jar-shrink.jar" "$__bad_named" -out "$__named" -n -keep "me.zeroeightsix" -keep "baritone" -keep "org.kamiblue" -keep "org.spongepowered"
 
 rm "$__bad_named" # remove the un-shrunk jar with -release

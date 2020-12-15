@@ -8,7 +8,7 @@
 # Do not use this except to get relative script paths
 
 root_kami_dir() {
-  pwd | sed "s/kamiblue.*/kamiblue/g"
+  echo "./"
 }
 
 check_var() {

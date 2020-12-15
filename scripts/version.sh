@@ -18,17 +18,9 @@ source "$__utils"
 
 check_git || exit $?
 
+version=$(<version.txt)
+
 CUR_HASH="-"$(git log --pretty=%h -1) # for the -hash
-CUR_R=$(($(date +"%Y") - 2019))       # Current year - 2019
-CUR_M_D=$(date +".%m.%d")             # Current month and day, formatted
+CUR_R="-beta."$version    # Current year - 2019
 
-if [ "$1" == "major" ]; then
-  CUR_HASH=""
-  CUR_M_D=$(date +".%m.01")
-fi
-
-if [ "$1" != "major" ] && [ "$2" == "simple" ]; then
-  CUR_HASH="-beta"
-fi
-
-echo "$CUR_R$CUR_M_D$CUR_HASH"
+echo "$CUR_R$CUR_HASH"
