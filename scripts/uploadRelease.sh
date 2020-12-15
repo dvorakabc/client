@@ -34,9 +34,9 @@ echo '{
   "stable": 
   {
     "name": "'$3'",
-    "url": "https://uploads.github.com/repos/'$owner/$repo/releases/$3/NECRON-$3.jar"'"
+    "url": "https://uploads.github.com/repos/'"$owner/$repo/releases/$3/NECRON-$3.jar"'"
   }
 }' > "latest.json"
 
-git commit -m 'update latest.json' ./latest.json
+git commit -m 'update version' ./latest.json ./src/main/java/me/zeroeightsix/kami/NecronClient.java ./gradlew.bat
 git push
