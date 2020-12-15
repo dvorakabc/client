@@ -34,7 +34,7 @@ echo '{
   "stable": 
   {
     "name": "'$3'",
-    "url": "https://uploads.github.com/repos/'"$owner/$repo/releases/$3/NECRON-$3.jar"'"
+    "url": "https://uploads.github.com/'"$KAMI_OWNER/$REPO/releases/$3/NECRON-$3.jar"'"
   }
 }' > "latest.json"
 
