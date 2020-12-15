@@ -10,10 +10,10 @@ import me.zeroeightsix.kami.util.InfoCalculator
 import me.zeroeightsix.kami.util.InventoryUtils
 import me.zeroeightsix.kami.util.TimeUtils
 import me.zeroeightsix.kami.util.color.EnumTextColor
-import me.zeroeightsix.kami.util.event.listener
 import net.minecraft.client.Minecraft
 import net.minecraftforge.fml.common.gameevent.TickEvent
 import org.kamiblue.commons.utils.MathUtils.round
+import org.kamiblue.event.listener.listener
 import java.util.*
 import kotlin.collections.ArrayList
 import kotlin.math.max
@@ -91,7 +91,7 @@ object InfoOverlay : Module() {
             if (speed.value) addContent("${calcSpeed(decimalPlaces.value)}", speedUnit.value.displayName)
             if (timerSpeed.value) addContent("${round(50f / mc.timer.tickLength, decimalPlaces.value)}", "x")
             if (ping.value) addContent("${InfoCalculator.ping()}", "ms")
-            if (server.value) addContent(mc.player.serverBrand)
+            if (server.value) addContent(mc.player.serverBrand ?: "Unknown Server")
             if (durability.value) addContent("${InfoCalculator.heldItemDurability()}", "dura")
             if (biome.value) addContent(mc.world.getBiome(mc.player.position).biomeName, "biome")
             if (memory.value) addContent("${InfoCalculator.memory()}", "MB")
