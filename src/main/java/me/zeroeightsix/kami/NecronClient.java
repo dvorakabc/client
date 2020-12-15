@@ -34,7 +34,7 @@ public class NecronClient {
 
     public static final String NAME = "NECRON Client";
     public static final String ID = "necron";
-    public static final String VERSION = "1.12-beta.0.14"; // Used for debugging. R.MM.DD-hash format.
+    public static final String VERSION = "beta.0.17-9fc16e26"; // Used for debugging. R.MM.DD-hash format.
     public static final String VERSION_SIMPLE = VERSION; // Shown to the user. R.MM.DD[-beta] format.
     public static final String VERSION_MAJOR = VERSION; // Used for update checking. RR.MM-beta.X.XX format.
     public static final int BUILD_NUMBER = -1; // Do not remove, currently unused but will be used in the future.

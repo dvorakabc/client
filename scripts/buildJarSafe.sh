@@ -7,7 +7,7 @@
 # Usage: "./buildJarSafe.sh"
 
 __d="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-source ~/.profile
+source "$__d/../../.profile"
 source "$__d/utils.sh"
 
 check_var "JDK_11_HOME" "$JDK_11_HOME" || exit $?

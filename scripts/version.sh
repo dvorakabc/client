@@ -21,6 +21,6 @@ check_git || exit $?
 version=$(<version.txt)
 
 CUR_HASH="-"$(git log --pretty=%h -1) # for the -hash
-CUR_R="-beta."$version    # Current year - 2019
+CUR_R="beta."$version    # Current year - 2019
 
 echo "$CUR_R$CUR_HASH"
