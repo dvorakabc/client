@@ -34,9 +34,10 @@ echo '{
   "stable": 
   {
     "name": "'$3'",
-    "url": "https://uploads.github.com/'"$KAMI_OWNER/$REPO/releases/$3/NECRON-$3.jar"'"
+    "url": "https://github.com/'"$KAMI_OWNER/$REPO/releases/download/$3/NECRON-$3.jar"'"
   }
 }' > "latest.json"
+"$_d"/scripts/incrementVersion.sh "$VERSION"
 
-git commit -m 'update version' ./latest.json ./src/main/java/me/zeroeightsix/kami/NecronClient.java ./gradlew.bat
+git commit -m 'update version' ./latest.json ./src/main/java/me/zeroeightsix/kami/NecronClient.java ./gradle.properties
 git push

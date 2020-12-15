@@ -44,4 +44,3 @@ VERSION="$("$_d"/scripts/version.sh)" || exit $?
 JAR_NAME="$("$_d"/scripts/buildJarSafe.sh)" || exit $?
 
 "$_d"/scripts/uploadRelease.sh "$1" "$HEAD" "$VERSION" "$JAR_NAME" || exit $?
-"$_d"/scripts/incrementVersion.sh "$VERSION"
