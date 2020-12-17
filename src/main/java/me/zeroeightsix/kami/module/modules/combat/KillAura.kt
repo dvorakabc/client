@@ -24,11 +24,11 @@ import org.kamiblue.event.listener.listener
         modulePriority = 50
 )
 object KillAura : Module() {
-    private val delayMode = register(Settings.e<WaitMode>("Mode", WaitMode.DELAY))
+    val delayMode = register(Settings.e<WaitMode>("Mode", WaitMode.DELAY))
     private val multi = register(Settings.b("Multi", false))
     private val lockView = register(Settings.booleanBuilder("LockView").withValue(false).withVisibility { !multi.value })
     private val spoofRotation = register(Settings.booleanBuilder("SpoofRotation").withValue(true).withVisibility { !multi.value && !lockView.value })
-    private val waitTick = register(Settings.floatBuilder("SpamDelay").withValue(2.0f).withRange(1.0f, 40.0f).withStep(0.5f).withVisibility { delayMode.value == WaitMode.SPAM })
+    val waitTick = register(Settings.floatBuilder("SpamDelay").withValue(2.0f).withRange(1.0f, 40.0f).withStep(0.5f).withVisibility { delayMode.value == WaitMode.SPAM })
     val range = register(Settings.floatBuilder("Range").withValue(5f).withRange(0f, 8f).withStep(0.25f))
     private val tpsSync = register(Settings.b("TPSSync", false))
     private val autoTool = register(Settings.b("AutoWeapon", true))
@@ -38,7 +38,7 @@ object KillAura : Module() {
     private var inactiveTicks = 0
     private var tickCount = 0
 
-    private enum class WaitMode {
+    enum class WaitMode {
         DELAY, SPAM
     }
 
