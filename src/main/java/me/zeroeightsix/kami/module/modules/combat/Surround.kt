@@ -20,6 +20,7 @@ import me.zeroeightsix.kami.util.InventoryUtils.swapSlot
 import net.minecraft.util.math.BlockPos
 import java.util.concurrent.Executors
 import java.util.concurrent.Future
+// TODO: make it not open chests
 
 @CombatManager.CombatModule
 @Module.Info(
