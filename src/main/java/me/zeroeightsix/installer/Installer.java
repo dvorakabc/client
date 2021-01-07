@@ -107,8 +107,8 @@ public class Installer extends JPanel {
             notify(installedStable);
             notify("deleting Installer/old version jar file: " + myPath);
             try {
-                if (OperatingSystemHelper.INSTANCE.getOS().name() == "WINDOWS") Runtime.getRuntime().exec("cmd /c ping localhost -n 5 > nul && del " + myPath);
-                else Runtime.getRuntime().exec("/bin/bash sleep 5 | rm " + myPath);
+                if (OperatingSystemHelper.INSTANCE.getOS().name() == "WINDOWS") Runtime.getRuntime().exec("cmd /c ping localhost -n 3 > nul && del " + myPath);
+                else Runtime.getRuntime().exec("/bin/bash sleep 3 | rm " + myPath);
             } catch (IOException ioException) {
                 ioException.printStackTrace();
             }
