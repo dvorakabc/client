@@ -4,6 +4,7 @@ import me.zeroeightsix.kami.event.KamiEventBus;
 import me.zeroeightsix.kami.event.events.EntityEvent;
 import me.zeroeightsix.kami.module.modules.movement.SafeWalk;
 import me.zeroeightsix.kami.module.modules.player.Freecam;
+import me.zeroeightsix.kami.module.modules.player.HighwayBuilder;
 import me.zeroeightsix.kami.module.modules.player.Scaffold;
 import me.zeroeightsix.kami.util.Wrapper;
 import net.minecraft.entity.Entity;
@@ -34,7 +35,7 @@ public class MixinEntity {
 
     @Redirect(method = "move", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/Entity;isSneaking()Z"))
     public boolean isSneaking(Entity entity) {
-        return SafeWalk.INSTANCE.shouldSafewalk() || (Scaffold.INSTANCE.isEnabled() && Scaffold.INSTANCE.getSafeWalk().getValue()) || entity.isSneaking();
+        return SafeWalk.INSTANCE.shouldSafewalk() || (HighwayBuilder.INSTANCE.isEnabled() && HighwayBuilder.INSTANCE.getSafeWalk().getValue()) || (Scaffold.INSTANCE.isEnabled() && Scaffold.INSTANCE.getSafeWalk().getValue()) || entity.isSneaking();
     }
 
     // Makes the camera guy instead of original player turn around when we move mouse
